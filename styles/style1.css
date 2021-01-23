@@ -6,34 +6,40 @@
     content: '';
     height: 250px;
     width: 100%;
-    background-image: url("../img/header_fondo.png");
+    background-image: url("../img/header_fondo (3).png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     display: block;
-    filter: blur(3px) ;
-    -webkit-filter: blur(3px);
+    filter: blur(0.1px) ;
+    -webkit-filter: blur(0.3px);
     transition: all 1000ms;
     /* filter: grayscale(75%); */
 }
+
 .header:hover::after{
     filter: blur(0);
     -webkit-filter: blur(0);
 }
 .titulo:hover .header{
-    filter: blur(3px);
-    -webkit-filter: blur(3px);
+    filter: blur(0.1px);
+    -webkit-filter: blur(0.1px);
 }
 
 .header-content{
-    -webkit-text-stroke: 0.7px black;
+    -webkit-text-stroke: 0.5px black;
     position: absolute;/* para que este uno dentro de otro */
     z-index: 1;
     margin-top: 10px;
     text-align: center;
     width: 100%;
     height: 230px;
-    transition: all 1000ms;    
+    transition: all 1000ms;
+    color: #ff7907;   
+}
+a{
+    -webkit-text-stroke: 0.2px black;
+    color: #ff7907;  
 }
 
 .logo{
@@ -78,4 +84,57 @@
     font-size: 40px;
     padding: 0 15%  0 15%;
     margin: 0;
+}
+
+.navsi{
+
+    background: linear-gradient(#fee4b1, #ffffff);
+}
+
+.gallery{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+.galley-item{
+    background-color: darkgray;
+    margin-right: 0;
+}
+
+.masonry-layout{
+    /* declaracion de variable --variable */
+    --colums: 1;
+    --gap: 2rem;
+    /* variable saaass */
+    /* $columns: 4; */
+    display: grid;
+    grid-template-columns: repeat(var(--colums), 1fr);
+    grid-gap: var(--gap);
+
+    
+
+    /* &.column  */
+}
+
+.masonry-item{
+      margin-bottom: var(--gap);
+      
+}
+
+.masonry-layout.columns-1{
+    --colums: 1;
+}
+.masonry-layout.columns-2{
+    --colums: 2;
+}
+.masonry-layout.columns-3{
+    --colums: 3;
+}
+.masonry-layout.columns-4{
+    --colums: 4;
 }
