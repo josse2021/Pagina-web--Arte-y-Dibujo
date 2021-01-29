@@ -13,69 +13,70 @@
 </head>
 <body >
 
-  <?php
+    <?php
         session_start();
 
         if(!isset($_SESSION['nombre']) || $_SESSION['nombre'] == null)
             header("Location:login.php");
-  ?>
+    ?>
 
    <header class="header">
 
-       <div class="header-content">
+      <div class="header-content ">
           <div class="logo">
             <a href="#"><img src="img/logo2.png " alt=""></a>
             logotipo
-          </div>
+            
+      </div>
 
-         
-          <div style="margin:10px 30px 0 0;">
-            <a href="logout.php" class="logout"><input type="button" class="boton" value="Cerrar sesión"></a>
-            <b class="usuario sticky-top"><?php echo $_SESSION['nombre']?></b>
-          </div> 
-          
-          
-          <div class="titulo">
-            <h1 class="titulo_principal">Galeria de Arte-Dibujo</h1>
-            <p class="titulo_secundario ">ImaginArt</p>
-          </div>
-       </div>
+      <div style="margin:10px 30px 0 0;">
+          <a href="logout.php" class="logout"><input type="button" class="boton" value="Cerrar sesión"></a>
+          <b class="usuario sticky-top"><?php echo $_SESSION['nombre']?></b>
+      </div> 
+        
+      <div class="titulo">
+        <h1 class="titulo_principal">Galeria de Arte-Dibujo</h1>
+        <p class="titulo_secundario ">ImaginArt</p>
+      </div>
+      </div>
    </header>
 
    <nav class="navbar-expand-sm sticky-sm-top text-center" style="top: 0px;">
             <div class="navbar-collapse navsi">
                 <ul class="navbar-nav ">
-                    <li ><a  class="nav-link fs-4"  href="./imaginart.php">Inicio</a></li>
-                    <li ><a class="nav-link fs-4" href="#">Mis Imagenes</a></li>
+                    <li ><a  class="nav-link fs-4"  href="#">Inicio</a></li>
+                    <li ><a class="nav-link fs-4" href="./mis_imagenes.php">Mis Imagenes</a></li>
                     <li ><a class="nav-link fs-4" href="#">Mi Perfil</a></li>
                 </ul>
             </div>
    </nav> 
-   
-   <!-- <div class="gallery container masonry-layout columns-3" id="gallery"> quitar el masory y las columnas- js reemplasará esto-->
-   <a href="nuevo_prod1.php" style='margin-left: 50px'><button type="button" class="btn btn-info">Nuevo</button> </a> </th>
-        <!-- </thead> -->
 
-        <?php
+   <!-- <div class="gallery container masonry-layout columns-3" id="gallery"> quitar el masory y las columnas- js reemplasará esto-->
+   <div class="gallery container" id="gallery">
+    <div class="gallery-item"><img class="grid-item" src="https://picsum.photos/230/128.jpg" /></div>
+    <div class="gallery-item"><img class="grid-item" src="https://picsum.photos/230/300.jpg" /></div>
+    <div class="gallery-item"><img class="grid-item" src="https://picsum.photos/230/410.jpg" /></div>
+   </div>
+
+   <?php
           $id_usuario=$_SESSION['id'];
           include "./conexion/conexion.php";
-          $sentecia="SELECT * FROM imagen where id_usuario=$id_usuario";
+          // $sentecia="SELECT * FROM imagen where id_usuario=$id_usuario";
+          $sentecia="SELECT i.url, i.descripcion, u.nombre FROM imagen i INNER JOIN usuario u on i.id_usuario = u.id_usuario";
+
           $resultado= $conexion->query($sentecia) or die (mysqli_error($conexion));
           echo "<div class='gallery container' id='gallery'>";
           while($fila=$resultado->fetch_assoc())
           {
               echo "<div class='gallery-item'><img class='grid-item' src='".$fila['url']."' width='200'>";
                 echo "<div>";
-                  echo $fila['id_usuario'];
-                  echo '<br>';
-                  echo $_SESSION['nombre'];
+                  // echo $fila['id_usuario'];
+                  // echo '<br>';
+                  echo $fila['nombre'];
                   echo '<br>';
                   echo $fila['descripcion'];
                 echo "</div>";
 
-                echo "<a href='modif_prod1.php?idimg=".$fila['id_imagen']."'> <button type='button' class='btn btn-success'>Modificar</button></a>";
-                echo '&nbsp;&nbsp;&nbsp';
-                echo " <a href='eliminar_prod.php?idimg=".$fila['id_imagen']."'> <button type='button' class='btn btn-danger'>Eliminar</button></a>";
               echo "</div>";
               
             }
@@ -83,6 +84,11 @@
           
           $resultado->close();
         ?>
+
+
+
+
+
 
 
    <script src="./js/masonry.js"></script>

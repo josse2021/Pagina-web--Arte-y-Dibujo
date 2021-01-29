@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body{
+    background: url(img/fondologin.png) no-repeat center fixed;
+    
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    
+}
+
+.padre {
+    /* background: rgb(232, 118, 12); */
+    /* background: url(path/to.image.png) no-repeat center center fixed; */
+    
+    height: 100vh;
+    /*IMPORTANTE*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+.hijo {
+    background: red;
+    
+  }
+
+.container_form {
+    background-position: center center;
+    max-width: 520px;
+    background-color: #fff;
+    /* margin-top: 50px; */
+    padding: 30px 40px 30px 40px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-box-shadow: 5px 5px 45px -9px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 5px 5px 45px -9px rgba(0, 0, 0, 0.6);
+    -ms-box-shadow: 5px 5px 45px -9px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 5px 5px 45px -9px rgba(0, 0, 0, 0.6);
+    box-shadow: 5px 5px 45px -9px rgba(0, 0, 0, 0.6);
+}
+.valuForm{
+    background-color: #fff !important;
+    border: 0px !important;
+    border-bottom: 2px solid #D9D9D8 !important;
+    border-radius: 0 !important;
+    color: #004A92 !important;
+    font-weight: lighter;
+    box-shadow: none !important;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.logo{
+    width: 100%;
+    height: 110%;
+    box-sizing: border-box;
+    margin: 0;
+    
+}
+
+.boton{
+        margin: 20px 10% 0px  10%;
+    
+        padding: 5px 10px 5px 10px !important;
+        border-radius: 4px;
+        /* background-color: #783fd3d5; */
+        letter-spacing: 1px;
+        color: rgb(112, 0, 240);
+        font-size: 25px;
+    
+}

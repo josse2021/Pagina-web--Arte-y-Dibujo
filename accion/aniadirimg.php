@@ -1,5 +1,7 @@
 <?php
 
+	session_start();
+
 	var_dump($_FILES);
 	include '../conexion/conexion.php';
 
@@ -17,7 +19,7 @@
 		echo $_FILES['file2']['name'];
 	} else 
 	{
-		$id_usuario = 1;
+		// $id_usuario = $_SESSION['id'];
 		$nom_archivo=$_FILES['file2']['name']; // Para conocer el nombre del archivo
 		$ruta = "../images/". $nom_archivo;  // La ruta del archivo contiene el nuevo nombre y el tipo de extension
 		echo $ruta;
@@ -28,13 +30,13 @@
 		// echo $sentencia_img="INSERT INTO productos (imagen) VALUES ('$ruta')";
 		// $conexion->query($sentencia_img) or die ("Error al actualizar datos".mysqli_error($conexion));
 		
-		NuevoProducto($id_usuario,$url, $_POST['descripcion']);
+		NuevoProducto($_SESSION['id'],$url, $_POST['descripcion']);
 	
 		
 	}
 ?>
 
 <script type="text/javascript">
-	alert("Producto Ingresado Exitosamante!!");
+	alert("Nueva imagen guardada!!");
 	window.location.href='../mis_imagenes.php';
 </script>

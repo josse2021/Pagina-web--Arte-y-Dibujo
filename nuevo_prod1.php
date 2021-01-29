@@ -1,5 +1,10 @@
 <?php
-  include "./conexion/conexion.php";
+	session_start();
+
+	if(!isset($_SESSION['nombre']) || $_SESSION['nombre'] == null)
+		header("Location:login.php");
+
+	include "./conexion/conexion.php";
 ?>
 
 <!DOCTYPE html>
@@ -20,25 +25,26 @@
 <![endif]-->
 </head>
 <body>
-<div class="todo">
-  
-  <div id="contenido">
-  	<div style="margin: auto; width: 800px; border-collapse: separate; border-spacing: 10px 5px;">
-  		<span> <h1>Añadir nueva imagen</h1> </span>
-  		<br>
-	 <form action="./accion/aniadirimg.php" method="POST" style="border-collapse: separate; border-spacing: 10px 5px;" enctype="multipart/form-data" >
-  		<label>Descripcion: </label>
-  		<textarea style="border-radius: 10px;" rows="3" cols="50" name="descripcion" ></textarea><br>
-  		
-		<input type="file" name="file2" id="file2">
-  		<br>
-  		<button type="submit" class="btn btn-success">Guardar</button>
-     </form>
-  	</div>
-  	
-  </div>
 
-</div>
+	<div class="todo">
+	
+	<div id="contenido">
+		<div style="margin: auto; width: 800px; border-collapse: separate; border-spacing: 10px 5px;">
+			<span> <h1>Añadir nueva imagen</h1> </span>
+			<br>
+		<form action="./accion/aniadirimg.php" method="POST" style="border-collapse: separate; border-spacing: 10px 5px;" enctype="multipart/form-data" >
+			<label>Descripcion: </label>
+			<textarea style="border-radius: 10px;" rows="3" cols="50" name="descripcion" ></textarea><br>
+			
+			<input type="file" name="file2" id="file2">
+			<br>
+			<button type="submit" class="btn btn-success">Guardar</button>
+		</form>
+		</div>
+		
+	</div>
+
+	</div>
 
 
 </body>
