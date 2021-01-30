@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis Imagenes</title>
+    <title>Mi Perfil</title>
     <link rel="stylesheet" href="./btcss/bootstrap.min.css">
     <link rel="stylesheet" href="./styles/style1.css">
     <link rel="stylesheet" href="./styles/headerstyle.css">
+    <link rel="stylesheet" href="./styleperfil.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
@@ -46,43 +47,36 @@
             <div class="navbar-collapse navsi">
                 <ul class="navbar-nav ">
                     <li ><a  class="nav-link fs-4"  href="./imaginart.php">Inicio</a></li>
-                    <li ><a class="nav-link fs-4" href="#">Mis Imagenes</a></li>
-                    <li ><a class="nav-link fs-4" href="./mi_perfil.php">Mi Perfil</a></li>
+                    <li ><a class="nav-link fs-4" href="./mis_imagenes.php">Mis Imagenes</a></li>
+                    <li ><a class="nav-link fs-4" href="#">Mi Perfil</a></li>
                 </ul>
             </div>
    </nav> 
    
    <!-- <div class="gallery container masonry-layout columns-3" id="gallery"> quitar el masory y las columnas- js reemplasará esto-->
-   <a href="nuevo_prod1.php" style='margin-left: 50px'><button type="button" class="btn btn-info">Nuevo</button> </a> </th>
-        <!-- </thead> -->
+    <script src="./btjs/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
 
-        <?php
-          $id_usuario=$_SESSION['id'];
-          include "./conexion/conexion.php";
-          $sentecia="SELECT * FROM imagen where id_usuario=$id_usuario";
-          $resultado= $conexion->query($sentecia) or die (mysqli_error($conexion));
-          echo "<div class='gallery container' id='gallery'>";
-          while($fila=$resultado->fetch_assoc())
-          {
-              echo "<div class='gallery-item'><img class='grid-item' src='".$fila['url']."' width='200'>";
-                echo "<div>";
-                  echo $fila['id_usuario'];
-                  echo '<br>';
-                  echo $_SESSION['nombre'];
-                  echo '<br>';
-                  echo $fila['descripcion'];
-                echo "</div>";
-
-                echo "<a href='modif_prod1.php?idimg=".$fila['id_imagen']."'> <button type='button' class='btn btn-success'>Modificar</button></a>";
-                echo '&nbsp;&nbsp;&nbsp';
-                echo " <a href='eliminar_prod.php?idimg=".$fila['id_imagen']."'> <button type='button' class='btn btn-danger'>Eliminar</button></a>";
-              echo "</div>";
-              
-            }
-          echo "</div>";
-          
-          $resultado->close();
-        ?>
+    <div class="container">
+        <div class="container">
+            <div class="text-center">
+                
+                        Nombre:<h2><strong>Jose Luis</strong></h2>
+                        Apellido:<h2><strong>Qusipe Ayquipa</strong></h2>
+                        Usuario:<h2><strong>$USUARIO$</strong></h2>
+                       
+                        <p><h2>Imagenes Subidas</h2></p>
+                <div class="text-center">
+                    <div class="">
+                        <h2>$20$</h2>                    
+                        <p><small>imagenes</small></p>
+                        <a href="mis_imagenes.php"><button class="btn btn-success btn-block"> Ver Imagenes </button></a>
+                    </div> 
+                </div>                 
+            </div>
+        </div>
+    </div>
 
 
    <script src="./js/masonry.js"></script>

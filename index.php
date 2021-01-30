@@ -1,3 +1,3 @@
 <?php
-    header('Location:imaginart.html')
+    header('Location:login.php')
 ?>
