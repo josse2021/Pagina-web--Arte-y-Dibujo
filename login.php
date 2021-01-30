@@ -89,7 +89,7 @@
             <div class="container_form">
                 <div class="fondo">
                             
-                    <img src="yagami.png" class="logo" alt="Logo">
+                    <img src="./img/loginimg.png" class="logo" alt="Logo">
                                 
                     <form action="login.php" method="post">
                         <label for="inputUser" class="visually-hidden">Usuario</label>

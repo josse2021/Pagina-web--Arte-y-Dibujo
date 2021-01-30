@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylelogin.css">
+    <link rel="stylesheet" href="styleregistrar.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./btcss/bootstrap.min.css">
@@ -60,7 +60,7 @@
             <div class="padre">
                     <div class="hijo">
                         <div class="container_form">
-                            <img src="registrate.png" class="logo" alt="Logo">
+                            <img src="./img/registrate.png" class="logo" alt="Logo">
                             <form action="registrar.php" method="post">
                                 <label for="inputName" class="visually-hidden">Name</label>
                                 <input class="form-control mb-1 mt-3" type="text" name="nombre" placeholder="Nombre" required="True">

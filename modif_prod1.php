@@ -24,10 +24,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Modificar Producto</title>
+<title>Modificar Imagen</title>
 <style type="text/css">
 @import url("css/mycss.css");
 </style>
+<link rel="stylesheet" href="./btcss/bootstrap.min.css">
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
 <link href="bootstrap-fileinput-master/css/fileinput.css" rel="stylesheet" type="text/css">
 <link href="bootstrap-fileinput-master/css/fileinput.min.css" rel="stylesheet" type="text/css">

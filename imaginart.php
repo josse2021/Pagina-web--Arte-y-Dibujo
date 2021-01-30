@@ -46,7 +46,7 @@
                 <ul class="navbar-nav ">
                     <li ><a  class="nav-link fs-4"  href="#">Inicio</a></li>
                     <li ><a class="nav-link fs-4" href="./mis_imagenes.php">Mis Imagenes</a></li>
-                    <li ><a class="nav-link fs-4" href="#">Mi Perfil</a></li>
+                    <li ><a class="nav-link fs-4" href="./mi_perfil.php">Mi Perfil</a></li>
                 </ul>
             </div>
    </nav> 
