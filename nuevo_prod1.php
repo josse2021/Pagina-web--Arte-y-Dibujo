@@ -13,9 +13,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nueva Imagen</title>
-<style type="text/css">
-@import url("css/mycss.css");
-</style>
 <link rel="stylesheet" href="./btcss/bootstrap.min.css">
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -37,7 +34,7 @@
 			<label>Descripcion: </label>
 			<textarea style="border-radius: 10px;" rows="3" cols="50" name="descripcion" ></textarea><br>
 			
-			<input type="file" name="file2" id="file2">
+			<input type="file" name="file2" id="file2" required="True" value="Imagen">
 			<br>
 			<button type="submit" class="btn btn-success">Guardar</button>
 		</form>

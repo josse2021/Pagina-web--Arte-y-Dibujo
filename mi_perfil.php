@@ -25,16 +25,13 @@
 
        <div class="header-content">
           <div class="logo">
-            <a href="#"><img src="img/logo2.png " alt=""></a>
-            logotipo
+            <a href="./imaginart.php"><img src="img/logo2.png " alt=""></a>
           </div>
 
-         
           <div style="margin:10px 30px 0 0;">
-            <a href="logout.php" class="logout"><input type="button" class=" btn-outline-danger" value="Cerrar sesión"></a>
-            <b class="usuario sticky-top"><?php echo $_SESSION['nombre']?></b>
+          <a href="logout.php" class="logout"><input type="button" class="rounded-pill bg-danger text-light" style="width: 100px;height: 40px;" value="Cerrar sesión"></a>
+                <b class="usuario badge rounded-pill text-dark sticky-top sticky-top"><?php echo $_SESSION['nombre']?></b>
           </div> 
-          
           
           <div class="titulo">
             <h1 class="titulo_principal">Galeria de Arte-Dibujo</h1>
@@ -52,34 +49,49 @@
                 </ul>
             </div>
    </nav> 
-   
-   <!-- <div class="gallery container masonry-layout columns-3" id="gallery"> quitar el masory y las columnas- js reemplasará esto-->
-    <script src="./btjs/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <!------ Include the above in your HEAD tag ---------->
 
     <div class="container">
         <div class="container">
+
             <div class="text-center">
-                
-                        Nombre:<h2><strong>Jose Luis</strong></h2>
-                        Apellido:<h2><strong>Qusipe Ayquipa</strong></h2>
-                        Usuario:<h2><strong>$USUARIO$</strong></h2>
+
+                <?php
+                    $id_usuario=$_SESSION['id'];
+                    include "./conexion/conexion.php";
+                    $sentecia="SELECT nombre, apellido, usuario FROM usuario where id_usuario=$id_usuario";
+                    $resultado= $conexion->query($sentecia) or die (mysqli_error($conexion));
+
+                    while($fila=$resultado->fetch_assoc()){
+                        echo "Nombre:<h2><strong>".$fila['nombre']."</strong></h2>";
+                        echo "Apellido:<h2><strong>".$fila['apellido']."</strong></h2>";
+                        echo "Usuario:<h2><strong>".$fila['usuario']."</strong></h2>";
+                        
+                        $sentecia="SELECT COUNT(url) as 'imagenes' from imagen WHERE id_usuario=$id_usuario";
+                        $resultado= $conexion->query($sentecia) or die (mysqli_error($conexion));
+                        
+                        while($fila=$resultado->fetch_assoc()){
+                        echo "<hr>";
+                        echo "<p><h2>Imagenes Subidas</h2></p>";
+                        echo "<hr>";
+                        echo "<div class='text-center'>";
+                            echo "<div class=''>";
+                                echo " <h2>$fila[imagenes]</h2> ";
+                                echo "<p><small>imagenes</small></p>";        
+                                echo "<a href='mis_imagenes.php'><button class='btn btn-success btn-block' style='margin-bottom: 20px;'> Ver Imagenes </button></a>
+                                  </div> 
+                             </div> 
+                            ";        
+                        }
+                    
+                    }
+                    $resultado->close();
+                ?>
                        
-                        <p><h2>Imagenes Subidas</h2></p>
-                <div class="text-center">
-                    <div class="">
-                        <h2>$20$</h2>                    
-                        <p><small>imagenes</small></p>
-                        <a href="mis_imagenes.php"><button class="btn btn-success btn-block"> Ver Imagenes </button></a>
-                    </div> 
-                </div>                 
             </div>
         </div>
     </div>
 
 
    <script src="./js/masonry.js"></script>
-   <script src="btjs/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 </body>
 </html>

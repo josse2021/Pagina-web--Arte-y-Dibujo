@@ -14,10 +14,6 @@
     <?php
         session_start();
 
-        // if(isset($_SESSION['nombre']) && $_SESSION['nombre'] !='')
-        //     header("Location:startUser.php");
-            
-
         function mysql_entities_fix_string($conexion, $string){
             return htmlentities(mysql_fix_string($conexion, $string));
         }
@@ -75,14 +71,6 @@
         !$loginexito)
         {
     ?>
-    
-
-<!-- <div class="wrapper">
-  <header class="page-header">Header</header>
-  <main class="page-main">Main</main>
-  <footer class="page-footer">Footer</footer>
-</div> -->
-
 
     <div class="padre">
         <div class="hijo">
@@ -97,12 +85,11 @@
                         <label for="inputPassword" class="visually-hidden">Password</label>
                         <input type="password" class="form-control" name="password" placeholder="Contraseña" required="True">
                         <div style="font-family: 'Lobster', cursive;" class="botonContent">
-                            
+                            <div style="text-align:center;">
                                 <input type="submit" class="boton btn-primary fs-6" value="Iniciar Sesion">
-                                <a href="registrar.php"><input type="button" class="boton btn-secondary fs-6" value="Registrarse" action></a>
-
+                                <a href="registrar.php"><input type="button" class="boton btn-secondary fs-6" value="Registrarse" action></a>                                                               
+                            </div>
                         </div>
-
                         <span class="clearn"></span>
                     </form>
                 </div>

@@ -20,28 +20,26 @@
             header("Location:login.php");
     ?>
 
-   <header class="header">
+    <header class="header">
 
       <div class="header-content ">
           <div class="logo">
             <a href="#"><img src="img/logo2.png " alt=""></a>
-            logotipo
-            
-      </div>
+          </div>
 
-      <div style="margin:10px 30px 0 0;">
-          <a href="logout.php" class="logout"><input type="button" class="boton" value="Cerrar sesión"></a>
-          <b class="usuario sticky-top"><?php echo $_SESSION['nombre']?></b>
-      </div> 
+          <div style="margin:10px 30px 0 0;">
+              <a href="logout.php" class="logout"><input type="button" class="rounded-pill bg-danger text-light" style="width: 100px;height: 40px;" value="Cerrar sesión"></a>
+                <b class="usuario badge rounded-pill text-dark sticky-top sticky-top"><?php echo $_SESSION['nombre']?></b>
+          </div> 
         
-      <div class="titulo">
-        <h1 class="titulo_principal">Galeria de Arte-Dibujo</h1>
-        <p class="titulo_secundario ">ImaginArt</p>
+          <div class="titulo">
+            <h1 class="titulo_principal">Galeria de Arte-Dibujo</h1>
+            <p class="titulo_secundario ">ImaginArt</p>
+          </div>
       </div>
-      </div>
-   </header>
+    </header>
 
-   <nav class="navbar-expand-sm sticky-sm-top text-center" style="top: 0px;">
+    <nav class="navbar-expand-sm sticky-sm-top text-center" style="top: 0px;">
             <div class="navbar-collapse navsi">
                 <ul class="navbar-nav ">
                     <li ><a  class="nav-link fs-4"  href="#">Inicio</a></li>
@@ -49,14 +47,14 @@
                     <li ><a class="nav-link fs-4" href="./mi_perfil.php">Mi Perfil</a></li>
                 </ul>
             </div>
-   </nav> 
+    </nav> 
 
    <!-- <div class="gallery container masonry-layout columns-3" id="gallery"> quitar el masory y las columnas- js reemplasará esto-->
-   <div class="gallery container" id="gallery">
-    <div class="gallery-item"><img class="grid-item" src="https://picsum.photos/230/128.jpg" /></div>
-    <div class="gallery-item"><img class="grid-item" src="https://picsum.photos/230/300.jpg" /></div>
-    <div class="gallery-item"><img class="grid-item" src="https://picsum.photos/230/410.jpg" /></div>
-   </div>
+    <div class="gallery container" id="gallery">
+      <div class="gallery-item"><img class="grid-item" src="https://picsum.photos/230/128.jpg" /></div>
+      <div class="gallery-item"><img class="grid-item" src="https://picsum.photos/230/300.jpg" /></div>
+      <div class="gallery-item"><img class="grid-item" src="https://picsum.photos/230/410.jpg" /></div>
+    </div>
 
    <?php
           $id_usuario=$_SESSION['id'];
@@ -76,22 +74,13 @@
                   echo '<br>';
                   echo $fila['descripcion'];
                 echo "</div>";
-
-              echo "</div>";
-              
+              echo "</div>"; 
             }
           echo "</div>";
           
           $resultado->close();
         ?>
 
-
-
-
-
-
-
    <script src="./js/masonry.js"></script>
-   <script src="btjs/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 </body>
 </html>

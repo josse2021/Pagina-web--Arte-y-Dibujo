@@ -24,16 +24,13 @@
 
        <div class="header-content">
           <div class="logo">
-            <a href="#"><img src="img/logo2.png " alt=""></a>
-            logotipo
+            <a href="./imaginart.php"><img src="img/logo2.png " alt=""></a>
           </div>
 
-         
           <div style="margin:10px 30px 0 0;">
-            <a href="logout.php" class="logout"><input type="button" class=" btn-outline-danger" value="Cerrar sesión"></a>
-            <b class="usuario sticky-top"><?php echo $_SESSION['nombre']?></b>
+            <a href="logout.php" class="logout"><input type="button" class="rounded-pill bg-danger text-light" style="width: 100px;height: 40px;" value="Cerrar sesión"></a>
+                <b class="usuario badge rounded-pill text-dark sticky-top sticky-top"><?php echo $_SESSION['nombre']?></b>
           </div> 
-          
           
           <div class="titulo">
             <h1 class="titulo_principal">Galeria de Arte-Dibujo</h1>
@@ -78,7 +75,7 @@
                 echo " <a href='eliminar_prod.php?idimg=".$fila['id_imagen']."'> <button type='button' class='btn btn-danger'>Eliminar</button></a>";
               echo "</div>";
               
-            }
+          }
           echo "</div>";
           
           $resultado->close();
