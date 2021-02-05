@@ -15,24 +15,11 @@ body{
     
     -webkit-background-size: cover;
     -moz-background-size: cover;
-<<<<<<< HEAD
     -o-background-size: cover; 
 }
 
 .padre {
     height: 100vh;
-=======
-    -o-background-size: cover;
-    
-}
-
-.padre {
-    /* background: rgb(232, 118, 12); */
-    /* background: url(path/to.image.png) no-repeat center center fixed; */
-    
-    height: 100vh;
-    /*IMPORTANTE*/
->>>>>>> 5c83e43bba99c5648de00be3916055a9e3242c27
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,10 +34,6 @@ body{
     background-position: center center;
     max-width: 520px;
     background-color: #fff;
-<<<<<<< HEAD
-=======
-    /* margin-top: 50px; */
->>>>>>> 5c83e43bba99c5648de00be3916055a9e3242c27
     padding: 30px 40px 30px 40px;
     border-radius: 10px;
     margin-left: auto;
@@ -82,13 +65,7 @@ body{
     
         padding: 5px 10px 5px 10px !important;
         border-radius: 4px;
-<<<<<<< HEAD
         letter-spacing: 1px;
-=======
-        /* background-color: #783fd3d5; */
-        letter-spacing: 1px;
-        color: rgb(112, 0, 240);
->>>>>>> 5c83e43bba99c5648de00be3916055a9e3242c27
         font-size: 25px;
     
 }
