@@ -51,11 +51,11 @@
 
    <!-- <div class="gallery container masonry-layout columns-3" id="gallery"> quitar el masory y las columnas- js reemplasará esto-->
     <div class="gallery container" id="gallery">
-      <div class="gallery-item"><img class="grid-item" src="https://picsum.photos/230/128.jpg" /></div>
-      <div class="gallery-item"><img class="grid-item" src="https://picsum.photos/230/300.jpg" /></div>
-      <div class="gallery-item"><img class="grid-item" src="https://picsum.photos/230/410.jpg" /></div>
+      <div class="gallery-item"><img class="grid-item" src="https://picsum.photos/230/128.jpg" width='100%' /></div>
+      <div class="gallery-item"><img class="grid-item" src="https://picsum.photos/230/300.jpg" width='100%'/></div>
+      <div class="gallery-item"><img class="grid-item" src="https://picsum.photos/230/410.jpg" width='100%'/></div>
     </div>
-
+  
    <?php
           $id_usuario=$_SESSION['id'];
           include "./conexion/conexion.php";
@@ -66,18 +66,18 @@
           echo "<div class='gallery container' id='gallery'>";
           while($fila=$resultado->fetch_assoc())
           {
-              echo "<div class='gallery-item'><img class='grid-item' src='".$fila['url']."' width='200'>";
-                echo "<div>";
-                  // echo $fila['id_usuario'];
-                  // echo '<br>';
-                  echo $fila['nombre'];
-                  echo '<br>';
-                  echo $fila['descripcion'];
-                echo "</div>";
-              echo "</div>"; 
+              echo "<div class='gallery-item contenedor'>";
+                  echo "<figure><img class='grid-item' src='".$fila['url']."' width='100%'>";
+                      echo "<div class='capa'>";
+                      echo "<h3>".$fila['nombre']."</h3>";
+                      echo "<p>".$fila['descripcion']."</p>";
+                      echo "</div>";
+                  echo "</figure>";
+                    // echo $fila['id_usuario'];
+                    // echo '<br>';
+              echo "</div>";
             }
           echo "</div>";
-          
           $resultado->close();
         ?>
 
